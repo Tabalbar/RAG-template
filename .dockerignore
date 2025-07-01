@@ -23,7 +23,6 @@ chroma_db/data/
 *.sqlite3
 
 # Documents and uploads
-output/
 uploads/
 temp/
 *.pdf

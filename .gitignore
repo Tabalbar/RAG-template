@@ -83,7 +83,6 @@ chroma_db/data/
 *.db
 
 # Document uploads and processing
-output/
 uploads/
 temp/
 tmp/
