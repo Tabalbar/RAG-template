@@ -8,7 +8,7 @@ A FastAPI-based REST API for managing and searching financial documents using Ch
 
 ```bash
 # Option 1: Using the startup script
-python src/run_api.py
+python run_api.py
 
 # Option 2: Direct uvicorn command
 uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
@@ -25,7 +25,7 @@ The server will start at `http://localhost:8000`
 
 ```bash
 # Run the example client
-python src/tests/api_client_example.py
+python tests/api_client_example.py
 ```
 
 ## API Endpoints
@@ -234,7 +234,7 @@ For production deployment:
    gunicorn src.api:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
    ```
 
-2. **Configure CORS** appropriately in `src/api.py`
+2. **Configure CORS** appropriately in `api.py`
 
 3. **Use HTTPS** with a reverse proxy (nginx/Apache)
 
@@ -242,7 +242,7 @@ For production deployment:
 
 5. **Ensure sufficient disk space** for the embedded database
 
-6. **Regular backups** of the `src/chroma_db/data/` directory
+6. **Regular backups** of the `chroma_db/data/` directory
 
 ## Integration Examples
 

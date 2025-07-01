@@ -14,7 +14,7 @@ ChromaDB runs in **embedded mode only**, storing data locally in the `data/` dir
 ## Directory Structure
 
 ```
-src/chroma_db/
+chroma_db/
 ├── data/                     # ChromaDB persistent storage
 │   ├── chroma.sqlite3       # Main database file
 │   └── [collection-id]/     # Collection-specific data
@@ -24,11 +24,11 @@ src/chroma_db/
 
 ## Configuration
 
-The system is configured via `src/settings.py`:
+The system is configured via `settings.py`:
 
 ```python
 # ChromaDB Configuration
-chroma_db_path: Path = Field(default=Path("./src/chroma_db/data"))
+chroma_db_path: Path = Field(default=Path("./chroma_db/data"))
 chroma_collection_name: str = Field(default="financial_documents")
 chroma_distance_function: str = Field(default="cosine")
 ```
@@ -37,30 +37,30 @@ chroma_distance_function: str = Field(default="cosine")
 
 ChromaDB is automatically initialized when you:
 
-1. **Run the API**: `python src/run_api.py`
-2. **Setup database**: `python src/chroma_db/setup_database.py --action setup`
-3. **Use the embeddings module**: Import from `src.documents.embeddings`
+1. **Run the API**: `python run_api.py`
+2. **Setup database**: `python chroma_db/setup_database.py --action setup`
+3. **Use the embeddings module**: Import from `documents.embeddings`
 
 ## Database Management
 
 ### View Stats
 ```bash
-python src/chroma_db/setup_database.py --action info
+python chroma_db/setup_database.py --action info
 ```
 
 ### Reset Database  
 ```bash
-python src/chroma_db/setup_database.py --action reset
+python chroma_db/setup_database.py --action reset
 ```
 
 ### Setup Database
 ```bash
-python src/chroma_db/setup_database.py --action setup
+python chroma_db/setup_database.py --action setup
 ```
 
 ### Backup Data
 ```bash
-cp -r src/chroma_db/data/ backup_$(date +%Y%m%d)/
+cp -r chroma_db/data/ backup_$(date +%Y%m%d)/
 ```
 
 ## Data Storage
@@ -90,13 +90,13 @@ pkill -f "python.*api"
 
 ### Permissions Issues
 ```bash
-chmod -R 755 src/chroma_db/data/
+chmod -R 755 chroma_db/data/
 ```
 
 ### Disk Space
 Monitor the `data/` directory size:
 ```bash
-du -sh src/chroma_db/data/
+du -sh chroma_db/data/
 ```
 
 ## Migration Notes

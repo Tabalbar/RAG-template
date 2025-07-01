@@ -115,7 +115,7 @@ def main():
         print(f"📊 Embedding Model: {health['embedding_model']}")
         print(f"🏢 Provider: {health['embedding_provider']}")
     else:
-        print("❌ API server is not running. Start it with: python src/run_api.py")
+        print("❌ API server is not running. Start it with: python run_api.py")
         return
     
     # Get stats
@@ -147,7 +147,7 @@ def main():
         print("💡 To ingest documents, you can:")
         print("   - Use the /ingest-directory endpoint")
         print("   - Use the /upload endpoint")
-        print("   - Run: python src/documents/ingest_documents.py")
+        print("   - Run: python documents/ingest_documents.py")
     
     print("\n" + "=" * 50)
     print("🌐 API Documentation available at: http://localhost:8000/docs")

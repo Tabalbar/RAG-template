@@ -14,10 +14,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY . ./src/
+COPY . .
 
 # Create data directories
-RUN mkdir -p src/chroma_db/data
+RUN mkdir -p chroma_db/data
 
 # Set environment variables
 ENV PYTHONPATH=/app
@@ -31,4 +31,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8000/ || exit 1
 
 # Run the application
-CMD ["python", "src/run_api.py"] 
+CMD ["python", "run_api.py"] 

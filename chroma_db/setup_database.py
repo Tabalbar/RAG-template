@@ -12,8 +12,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.settings import settings, validate_settings
-from src.documents.embeddings import ChromaDBManager
+from settings import settings, validate_settings
+from documents.embeddings import ChromaDBManager
 import logging
 
 # Configure logging
@@ -63,7 +63,7 @@ def setup_database():
         print("\n🎉 Database setup completed successfully!")
         print("=" * 60)
         print("Next steps:")
-        print("1. Run: python src/documents/ingest_documents.py --source output/")
+        print("1. Run: python documents/ingest_documents.py --source output/")
         print("2. Test queries with your financial documents")
         
         return True
